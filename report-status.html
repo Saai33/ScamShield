@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Status | ScamShield</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#07111f] text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="nav-glass flex items-center justify-between px-6 py-4 rounded-2xl">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="logo-shield">🛡️</div>
+                    <div>
+                        <h1 class="font-bold text-lg tracking-wide">
+                            Scam<span class="text-cyan-400">Shield</span>
+                        </h1>
+                        <p class="text-[10px] text-slate-400 tracking-widest uppercase">
+                            Trust Before You Apply
+                        </p>
+                    </div>
+                </a>
+
+                <a href="index.html" class="nav-link text-sm text-slate-400 hover:text-cyan-400 transition">
+                    ← Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="min-h-screen pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- HEADER -->
+            <div class="text-center mb-10">
+                <span class="section-tag">REPORT TRACKING</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mt-4">
+                    Track Complaint <span class="gradient-text">Status</span>
+                </h1>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+                    View report progress, detected scam reasons, and verified trust indicators using your Report ID.
+                </p>
+
+                <!-- REPORT SEARCH LOOKUP BAR -->
+                <div class="mt-7 max-w-lg mx-auto flex items-center gap-2.5 p-2 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-xl">
+                    <input type="text" id="searchReportId" placeholder="Enter Report ID (e.g. SCM-2026-12345)..." class="flex-1 bg-transparent px-4 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none">
+                    <button type="button" id="searchReportBtn" class="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs hover:brightness-110 transition shadow">
+                        🔍 Track Status
+                    </button>
+                </div>
+            </div>
+
+            <!-- REPORT ID CARD -->
+            <section class="analyzer-card p-7 md:p-9 mb-7">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Report ID</p>
+                        <div id="statusReportId" class="text-3xl md:text-4xl font-extrabold text-cyan-400 mt-2 tracking-wide font-mono">
+                            SCM-2026-00000
+                        </div>
+                    </div>
+
+                    <div class="px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                        <div class="text-[10px] uppercase tracking-[0.15em] text-slate-400">Current Status</div>
+                        <div id="currentStatus" class="text-amber-300 font-bold mt-1 text-sm">
+                            Submitted
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TWO COLUMN -->
+            <div class="grid lg:grid-cols-[1fr_1.1fr] gap-7">
+
+                <!-- TIMELINE -->
+                <section class="analyzer-card p-7 space-y-6">
+                    <div>
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Case Progress</p>
+                        <h2 class="text-2xl font-bold mt-1">Report Timeline</h2>
+                    </div>
+
+                    <div class="space-y-7">
+                        <div class="flex gap-4">
+                            <div class="timeline-dot active">✓</div>
+                            <div>
+                                <h3 class="font-bold text-sm">Report Submitted</h3>
+                                <p class="text-xs text-slate-400 mt-1">Your complaint and evidence details have been securely recorded.</p>
+                                <span id="submittedTime" class="text-[11px] text-cyan-400 block mt-1.5 font-mono">Just now</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="timeline-dot pending">2</div>
+                            <div>
+                                <h3 class="font-bold text-sm text-slate-300">Under Review</h3>
+                                <p class="text-xs text-slate-400 mt-1">Evidence evaluated against employer verification registry.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="timeline-dot pending">3</div>
+                            <div>
+                                <h3 class="font-bold text-sm text-slate-300">Action Recommended</h3>
+                                <p class="text-xs text-slate-400 mt-1">Guidance provided regarding scam prevention and recovery.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SNAPSHOT & REASONS -->
+                <section class="space-y-6">
+
+                    <!-- ASSESSMENT -->
+                    <div class="analyzer-card p-7">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">ScamShield Assessment</p>
+                        <div id="statusAssessment" class="text-2xl font-bold mt-2 text-cyan-300">
+                            Verify Before Applying
+                        </div>
+
+                        <div class="mt-5">
+                            <div class="flex items-end justify-between">
+                                <span class="text-xs text-slate-400">Risk Score</span>
+                                <span id="statusRiskScore" class="text-3xl font-extrabold text-cyan-400 font-mono">--</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full mt-3 overflow-hidden">
+                                <div id="riskBar" class="h-full bg-gradient-to-r from-emerald-400 via-amber-400 to-red-500 rounded-full transition-all duration-700" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCAM REASONS -->
+                    <div class="analyzer-card p-6 border-red-500/20 bg-red-950/10">
+                        <p class="text-xs text-red-400 uppercase tracking-wider font-bold">🚩 Scam Reasons (Red Flags)</p>
+                        <div id="statusRedFlags" class="mt-4 space-y-2.5">
+                            <div class="text-xs text-slate-400">No report evidence available.</div>
+                        </div>
+                    </div>
+
+                    <!-- NOT SCAM REASONS -->
+                    <div class="analyzer-card p-6 border-emerald-500/20 bg-emerald-950/10">
+                        <p class="text-xs text-emerald-400 uppercase tracking-wider font-bold">🟢 Not-Scam Reasons (Trust Indicators)</p>
+                        <div id="statusNotScamReasons" class="mt-4 space-y-2.5">
+                            <div class="text-xs text-slate-400">No trust indicators recorded.</div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="flex flex-wrap justify-center gap-4 mt-9">
+                <a href="analyze.html" class="px-6 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:brightness-110 transition text-xs">
+                    Analyze Another Opportunity
+                </a>
+                <a href="index.html" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-300 font-semibold hover:bg-slate-800 transition text-xs">
+                    Back to Home
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <style>
+        .timeline-dot {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .timeline-dot.active {
+            background: rgba(34,211,238,0.12);
+            border: 1px solid rgba(34,211,238,0.35);
+            color: #22d3ee;
+        }
+        .timeline-dot.pending {
+            background: rgba(100,116,139,0.08);
+            border: 1px solid rgba(100,116,139,0.25);
+            color: #64748b;
+        }
+    </style>
+
+    <script src="js/auth.js"></script>
+    <script src="js/report-status.js"></script>
+</body>
+</html>

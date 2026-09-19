@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analyze Opportunity | ScamShield</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class="bg-[#07111f] text-white">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="nav-glass flex items-center justify-between px-6 py-4 rounded-2xl">
+
+                <a href="index.html" class="flex items-center gap-3">
+
+                    <div class="logo-shield">
+                        🛡️
+                    </div>
+
+                    <div>
+
+                        <h1 class="font-bold text-lg tracking-wide">
+                            Scam<span class="text-cyan-400">Shield</span>
+                        </h1>
+
+                        <p class="text-[10px] text-slate-400 tracking-widest uppercase">
+                            Trust Before You Apply
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <a href="index.html" class="nav-link text-sm text-slate-400">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="min-h-screen pt-36 pb-20 relative overflow-hidden">
+
+        <div class="hero-glow glow-one"></div>
+        <div class="hero-glow glow-two"></div>
+
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+
+            <!-- ================= HEADER ================= -->
+
+            <div class="text-center mb-12">
+
+                <span class="section-tag">
+                    OPPORTUNITY ANALYZER
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-extrabold mt-4">
+
+                    What opportunity are you
+
+                    <span class="gradient-text">
+                        considering?
+                    </span>
+
+                </h2>
+
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto">
+                    Upload what you received. ScamShield will extract the details
+                    and analyze the available evidence.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= INPUT AREA ================= -->
+
+            <div class="grid lg:grid-cols-5 gap-7">
+
+
+                <!-- ================= LEFT ================= -->
+
+                <div class="lg:col-span-3">
+
+                    <div class="analyzer-card">
+
+
+                        <div class="card-top">
+
+                            <div>
+
+                                <p class="text-sm font-semibold">
+                                    Submit Opportunity
+                                </p>
+
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Screenshot, offer details or website link
+                                </p>
+
+                            </div>
+
+                            <div class="input-count">
+                                01
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ================= UPLOAD ================= -->
+
+                        <div
+                            id="uploadBox"
+                            class="upload-zone"
+                        >
+
+                            <input
+                                type="file"
+                                id="offerImage"
+                                accept="image/*"
+                                hidden
+                            >
+
+                            <div class="upload-icon">
+                                📤
+                            </div>
+
+                            <h3>
+                                Drop your screenshot here
+                            </h3>
+
+                            <p>
+                                or click to browse from your device
+                            </p>
+
+                            <span>
+                                PNG • JPG • JPEG
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ================= PREVIEW ================= -->
+
+                        <div
+                            id="imagePreviewContainer"
+                            class="hidden mt-5"
+                        >
+
+                            <div class="preview-header">
+
+                                <span>
+                                    Uploaded screenshot
+                                </span>
+
+                                <button
+                                    type="button"
+                                    id="removeImage"
+                                >
+                                    Remove
+                                </button>
+
+                            </div>
+
+
+                            <div class="image-preview-wrapper">
+
+                                <img
+                                    id="imagePreview"
+                                    alt="Uploaded opportunity"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ================= DIVIDER ================= -->
+
+                        <div class="input-divider">
+
+                            <span>
+                                OR
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ================= URL ================= -->
+
+                        <div>
+
+                            <label class="input-label">
+                                Opportunity URL
+                            </label>
+
+                            <div class="url-input">
+
+                                <span>
+                                    🔗
+                                </span>
+
+                                <input
+                                    type="url"
+                                    id="opportunityUrl"
+                                    placeholder="https://company.com/careers..."
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ================= DETAILS ================= -->
+
+                        <div class="mt-5">
+
+                            <label class="input-label">
+
+                                Additional details
+
+                                <span>
+                                    (optional)
+                                </span>
+
+                            </label>
+
+                            <textarea
+                                id="opportunityDetails"
+                                rows="4"
+                                placeholder="Paste any message, offer details or information you received..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- ================= ANALYZE BUTTON ================= -->
+
+                        <button
+                            id="analyzeBtn"
+                            type="button"
+                            class="analyze-main-btn"
+                        >
+
+                            <span>
+                                🛡️
+                            </span>
+
+                            Analyze Opportunity
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= RIGHT ================= -->
+
+                <div class="lg:col-span-2">
+
+                    <div class="checks-card">
+
+
+                        <div class="checks-header">
+
+                            <div class="checks-icon">
+                                🧠
+                            </div>
+
+                            <div>
+
+                                <p class="text-xs text-cyan-400 uppercase tracking-wider font-bold">
+                                    ScamShield Engine
+                                </p>
+
+                                <h3 class="font-bold mt-1">
+                                    What we look for
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="checks-list">
+
+
+                            <div class="check-item">
+
+                                <div class="check-symbol">
+                                    🔗
+                                </div>
+
+                                <div>
+
+                                    <h4>
+                                        URL & Domain
+                                    </h4>
+
+                                    <p>
+                                        Domain consistency and suspicious links
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="check-item">
+
+                                <div class="check-symbol">
+                                    🏢
+                                </div>
+
+                                <div>
+
+                                    <h4>
+                                        Company Identity
+                                    </h4>
+
+                                    <p>
+                                        Company and contact consistency
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="check-item">
+
+                                <div class="check-symbol">
+                                    💳
+                                </div>
+
+                                <div>
+
+                                    <h4>
+                                        Payment Signals
+                                    </h4>
+
+                                    <p>
+                                        Registration fees and upfront payments
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="check-item">
+
+                                <div class="check-symbol">
+                                    💬
+                                </div>
+
+                                <div>
+
+                                    <h4>
+                                        Language Patterns
+                                    </h4>
+
+                                    <p>
+                                        Pressure, urgency and suspicious claims
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ================= NOTE ================= -->
+
+                        <div class="evidence-note">
+
+                            <div>
+                                💡
+                            </div>
+
+                            <p>
+                                ScamShield doesn't rely on one signal.
+                                It combines available evidence before generating an assessment.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ================= PRIVACY ================= -->
+
+                    <div class="privacy-card">
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <div>
+
+                            <p class="font-semibold text-xs">
+                                Analyze before you act
+                            </p>
+
+                            <p class="text-[10px] text-slate-500 mt-1">
+                                Don't share sensitive personal information unnecessarily.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= PROCESS BAR ================= -->
+
+            <div class="analyzer-process">
+
+                <div class="process-step active">
+
+                    <span>
+                        01
+                    </span>
+
+                    Submit
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        02
+                    </span>
+
+                    Extract
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        03
+                    </span>
+
+                    Analyze
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        04
+                    </span>
+
+                    Explain
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= SCAN MODAL ================= -->
+
+    <div
+        id="scanOverlay"
+        class="scan-overlay hidden"
+    >
+
+        <div class="scan-modal">
+
+            <div class="scan-shield">
+                🛡️
+            </div>
+
+            <h3>
+                Analyzing Opportunity
+            </h3>
+
+            <p>
+                ScamShield is checking the available evidence...
+            </p>
+
+            <div class="scan-progress">
+
+                <div id="scanProgressBar"></div>
+
+            </div>
+
+            <div id="scanStatus">
+                Connecting to ScamShield analysis engine...
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/auth.js"></script>
+    <script src="js/analyze.js"></script>
+
+</body>
+
+</html>

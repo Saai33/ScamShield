@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield | Assessment</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/result.css">
+</head>
+
+<body class="result-page">
+
+    <!-- NAVBAR -->
+    <header class="result-nav">
+        <a href="index.html" class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <div class="brand-name">Scam<span>Shield</span></div>
+                <div class="brand-tagline">TRUST BEFORE YOU APPLY</div>
+            </div>
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="analyze.html" class="analyze-again">← Analyze Another</a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="result-container space-y-8">
+
+        <!-- HEADER -->
+        <section class="result-header">
+            <div>
+                <div class="result-eyebrow">SCAMSHIELD ASSESSMENT</div>
+                <h1>Opportunity <span>Assessment</span></h1>
+            </div>
+
+            <div class="assessment-status">
+                <span class="status-dot"></span>
+                Analysis Complete
+            </div>
+        </section>
+
+        <!-- TOP SUMMARY -->
+        <section class="assessment-grid">
+            <!-- SCORE -->
+            <div class="score-panel">
+                <div class="panel-label">RISK SCORE</div>
+                <div class="score-row">
+                    <div class="score-number">
+                        <span id="riskScore">--</span>
+                        <small>/100</small>
+                    </div>
+                    <div id="scoreBadge" class="score-badge">ANALYZING</div>
+                </div>
+
+                <div class="score-bar">
+                    <div id="scoreBar" class="score-fill"></div>
+                </div>
+
+                <h2 id="resultTitle">Analyzing...</h2>
+                <p id="resultDescription">Processing submitted evidence...</p>
+            </div>
+
+            <!-- SIGNAL SUMMARY -->
+            <div class="signals-panel">
+                <div class="panel-heading">
+                    <div>
+                        <div class="panel-label">EVIDENCE ANALYSIS</div>
+                        <h2>Why this score?</h2>
+                    </div>
+                    <div class="brain-icon">🧠</div>
+                </div>
+
+                <div id="signalsContainer" class="signals-grid">
+                    <div class="signal-loading">Loading scam vs not-scam signals...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- END-TO-END WORKFLOW DIAGRAM ACTIVE HIGHLIGHT -->
+        <section class="analyzer-card p-6 md:p-8 border-slate-800 bg-slate-900/60 rounded-3xl">
+            <div class="text-center max-w-xl mx-auto mb-6">
+                <span class="text-[10px] text-cyan-400 font-extrabold tracking-widest uppercase block">WORKFLOW ARCHITECTURE</span>
+                <h3 class="text-xl font-bold mt-1 text-white">ScamShield End-to-End Workflow Path</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-center text-xs">
+                <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
+                    <div class="text-lg">📥</div>
+                    <div class="font-bold text-white mt-1">1. Student Upload</div>
+                    <p class="text-[10px] text-slate-400 mt-0.5">URL / Details / Screenshot</p>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
+                    <div class="text-lg">🔍</div>
+                    <div class="font-bold text-white mt-1">2. Analysis Engine</div>
+                    <p class="text-[10px] text-slate-400 mt-0.5">URL • Content • Recruiter</p>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
+                    <div class="text-lg">🚨</div>
+                    <div class="font-bold text-white mt-1">3. Risk Assessment</div>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Scam vs Trust Reasons</p>
+                </div>
+
+                <div id="flowLowRiskNode" class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 transition">
+                    <div class="text-lg">🟢</div>
+                    <div class="font-bold text-emerald-300 mt-1">4a. Low Risk Path</div>
+                    <p class="text-[10px] text-emerald-200/70 mt-0.5">Proceed Carefully</p>
+                </div>
+
+                <div id="flowHighRiskNode" class="p-3.5 rounded-xl bg-red-950/30 border border-red-500/30 transition">
+                    <div class="text-lg">🔴</div>
+                    <div class="font-bold text-red-300 mt-1">4b. High Risk Path</div>
+                    <p class="text-[10px] text-red-200/70 mt-0.5">Report Scam & Get ID</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTION GUIDE -->
+        <section class="action-panel">
+            <div class="action-title">
+                <div class="action-icon">💡</div>
+                <div>
+                    <div class="panel-label">BEFORE YOU ACT</div>
+                    <h2>What should you do?</h2>
+                </div>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <span>01</span>
+                    <div>
+                        <strong>Verify Company Identity</strong>
+                        <p>Check the employer on official corporate portals before acting.</p>
+                    </div>
+                </div>
+
+                <div class="action-step">
+                    <span>02</span>
+                    <div>
+                        <strong>Check Recruiter Domain</strong>
+                        <p>Verify whether recruiter email matches official domain.</p>
+                    </div>
+                </div>
+
+                <div class="action-step">
+                    <span>03</span>
+                    <div>
+                        <strong>Never Pay Upfront Fees</strong>
+                        <p>Do not pay registration or processing fees to employers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBMITTED EVIDENCE -->
+        <section class="evidence-panel">
+            <div class="evidence-heading">
+                <div>
+                    <div class="panel-label">SUBMITTED EVIDENCE</div>
+                    <h2>What ScamShield analyzed</h2>
+                </div>
+                <div class="evidence-icon">📋</div>
+            </div>
+
+            <div class="evidence-grid">
+                <div class="evidence-box">
+                    <span>WEBSITE / URL</span>
+                    <strong id="submittedUrl">Not provided</strong>
+                </div>
+
+                <div class="evidence-box">
+                    <span>OPPORTUNITY DETAILS</span>
+                    <strong id="submittedDetails">Not provided</strong>
+                </div>
+
+                <div class="evidence-box">
+                    <span>SCREENSHOT</span>
+                    <strong id="submittedScreenshot">Not uploaded</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTION BUTTONS -->
+        <div class="result-actions">
+            <button id="reportScamBtn" class="report-btn">🚨 Report Scam</button>
+            <button id="saveReportBtn" class="save-btn">↓ Save Report</button>
+            <a href="analyze.html" class="new-analysis-btn">+ Analyze Another</a>
+        </div>
+
+        <p class="result-disclaimer">
+            ScamShield provides an automated evidence-based risk assessment. Verify independently.
+        </p>
+
+        <!-- POST-SCAM GUIDANCE -->
+        <section class="post-scam-panel">
+            <div class="post-scam-icon">💸</div>
+            <div class="post-scam-content">
+                <div class="panel-label">ALREADY PAID?</div>
+                <h2>Lost money or shared sensitive details?</h2>
+                <p>Stop further payments, preserve evidence, and contact your bank or payment provider immediately.</p>
+
+                <div class="post-scam-actions">
+                    <button id="postScamChatBtn" class="post-scam-btn">🤖 Get ScamShield Guidance</button>
+                    <button id="postScamReportBtn" class="post-scam-secondary">🚨 Create Report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCAMSHIELD CHATBOT -->
+        <section class="chatbot-panel">
+            <div class="chatbot-header">
+                <div class="chatbot-brand">
+                    <div class="chatbot-icon">🤖</div>
+                    <div>
+                        <div class="panel-label">SCAMSHIELD ASSISTANT</div>
+                        <h2>Need help with this opportunity?</h2>
+                        <p>Ask about the assessment, scam reasons, or next steps.</p>
+                    </div>
+                </div>
+
+                <div class="chatbot-status">
+                    <span></span> READY
+                </div>
+            </div>
+
+            <div class="chat-quick-actions">
+                <button class="quick-question" data-question="Why is this opportunity risky?">🚩 Why risky?</button>
+                <button class="quick-question" data-question="What are the not scam reasons?">🟢 Trust reasons?</button>
+                <button class="quick-question" data-question="What should I do next?">🛡️ What next?</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <div class="chat-message bot">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-bubble">
+                        Hi! I'm ScamShield Assistant. I can explain why this offer received its risk score and help you verify your offer safely.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input id="chatInput" type="text" placeholder="Ask about this opportunity..." autocomplete="off">
+                <button id="sendChatBtn">➤</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/result.js"></script>
+</body>
+</html>
